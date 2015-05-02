@@ -1,0 +1,46 @@
+
+.popover-hour-picker {
+    padding: 0 !important;
+}
+.popover-hour-picker .popover-content {
+    padding: 0;
+}
+.popover-hour-picker .dial {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    margin: 30px 35px 35px 35px;
+}
+.popover-hour-picker .dial .num {
+    position: absolute;
+    width: 30px;
+    padding: 0;
+    margin-left: -15px;
+    margin-top: -15px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.popover-hour-picker .dial-arrow {
+    background: #ccc;
+    position: absolute;
+    left: 50%;
+    width: 6px;
+    margin-left: -3px;
+    top: 20%;
+    bottom: 50%;
+    transform-origin: 50% 100%;
+    transition: transform 0.2s linear;
+    border-radius: 2px;
+}
+.popover-hour-picker .btn-group-time-picker > .btn {
+    border-radius: 0;
+    margin-top: -1px;
+    border-left: none;
+    border-right: none;
+
+}
+.popover-hour-picker .btn-group-time-picker > .btn:last-child {
+    border-bottom-left-radius: 4px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap HourPicker</title>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="src/hourpicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/hourpicker.css">
+    <script>
+        $(function () {
+            var
+                hourPicker = $('.time-select-group').hourpicker({
+                    container: 'body'
+                }).on('change.bs.hourpicker', function(e, value, formattedValue) {
+                    console.log('Value: ' + value);
+                    console.log('Formatted value: ' + formattedValue);
+                });
+        })
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav pull-right">
+            <li>
+                <a href="https://github.com/Remiremi/hourpicker">Fork on github</a>
+            </li>
+        </ul>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-right">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrap HourPicker</a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"> 
+            <h3>A very simple clock-like hour-of-the-day picker</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group time-select-group" id="time-popover" data-toggle="popover" data-placement="bottom" title="Select your preferred time">
+              <input type="text" class="form-control time-input" placeholder="Time" value="Midnight" aria-describedby="time-popover">
+              <span class="input-group-addon time-select-btn">
+                  <span class="glyphicon glyphicon-time"></span>
+              </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Basic usage</h1>
+            <pre>
+&lt;script&gt;
+    $(function () {
+        var hourPicker = $('.time-select-group').hourpicker({
+                container: 'body'
+            });
+    })
+&lt;/script&gt;
+&lt;div class="input-group time-select-group" id="time-popover" data-toggle="popover" data-placement="bottom" title="Select your preferred time"&gt;
+  &lt;input type="text" class="form-control time-input" placeholder="Time" value="Midnight" aria-describedby="time-popover"&gt;
+  &lt;span class="input-group-addon time-select-btn"&gt;
+      &lt;span class="glyphicon glyphicon-time"&gt;&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Options, events</h1>
+            <p>HourPicker inherits from <a href="http://getbootstrap.com/javascript/#popovers">bootstrap's popover</a>. It adds the <code>change</code> event:</p>
+            <pre>
+hourPicker.on('change.bs.hourpicker', function(e, value) {
+    // do something with value
+});</pre>
+        <p>For more customizations you will probably need to look at the code (it's just 200 lines of Javascript).</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
